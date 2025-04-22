@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class cube_script : MonoBehaviour
 {
-    public int face, force = 300;
+    public int face, force = 700;
     public Player player; // Référence au script Player
     public Text txt;
     Rigidbody rb;

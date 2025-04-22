@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A3FD4CD7-9CC8-05C4-890F-FE35D352FBA2}</ProjectGuid>
+    <ProjectGuid>{97325D5C-76CC-CD37-1443-4C0DD05E67E2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Boxophobic.SkyboxCubemapExtended.Editor</AssemblyName>
@@ -971,11 +971,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
-      <Project>{4A9C4A27-FFD7-136F-7428-2471DCB3A193}</Project>
+      <Project>{01EC01BD-3584-0F82-A273-2E0BF341A5C2}</Project>
       <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
-      <Project>{022DAC58-24A4-8BAD-22C1-BAC760DC16D7}</Project>
+      <Project>{57C65088-1006-15B3-288B-47C934D29B16}</Project>
       <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
   </ItemGroup>

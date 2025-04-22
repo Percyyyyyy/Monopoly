@@ -4,21 +4,21 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class OptionMenu : MonoBehaviour
 {
     int nbJoueurMax = 5;
-    public GameObject optionMenu;
     public static int nbTours = 5;
     public static int nbJoueurs = 2;
     public TMP_InputField inputTour;
     public TMP_InputField inputJoueur;
     public TextMeshProUGUI joueurActuelText;
     public UnityEngine.UI.Button btnValider;
+    public Canvas optionMenu;
     public Canvas choisirObjet;
     bool afficherPopup;
     string nom = "Joueur";
@@ -30,22 +30,12 @@ public class OptionMenu : MonoBehaviour
     public Dictionary<string, GameObject> joueurPion = new Dictionary<string, GameObject>();
     int indexJoueur = 0;
     string joueurActuel = "";
-
-
     // Start is called before the first frame update
     void Start()
     {
 
-    }
-
-    void Awake()
-
-    {
-
-        DontDestroyOnLoad(this.gameObject);
 
     }
-
     void OnGUI()
     {
         if (afficherPopup)
@@ -53,6 +43,10 @@ public class OptionMenu : MonoBehaviour
             // Affiche le pop-up avec un message
             GUI.Window(0, new Rect(Screen.width / 2 - 150, Screen.height / 2 - 75, 300, 150), AfficherPopup, "Erreur : Trop de joueurs !");
         }
+    }
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     void AfficherPopup(int windowID)
@@ -137,7 +131,6 @@ public class OptionMenu : MonoBehaviour
     }
     public void validerOption()
     {
-       
         nbTours = Int32.Parse(inputTour.text);
         nbJoueurs = Int32.Parse(inputJoueur.text);
         Debug.Log("nbTours = "+ nbTours);
@@ -148,43 +141,14 @@ public class OptionMenu : MonoBehaviour
             afficherPopup = true;
 
         }
-       
+        else
+        {
             afficherPopup = false;
             optionMenu.gameObject.SetActive(false);
             choisirObjet.gameObject.SetActive(true);
-            
-
-    }
-
-    public void ValiderChoixOption()
-    {
-        Debug.Log("Il y a " + nbTours + " tours et " + nbJoueurs + " nombre de joueur");
-
-        // Parcourir chaque joueur et afficher ses informations
-        foreach (var joueur in listeJoueur)
-        {
-            if (joueurPion.ContainsKey(joueur) && joueurCouleur.ContainsKey(joueur))
-            {
-                GameObject pion = joueurPion[joueur];
-                Color couleur = joueurCouleur[joueur];
-                /* Debug.Log(joueur + " a choisi le pion : " + pion.name + " et a la couleur : " + couleur.ToString());*/
-
-                // Stocker les informations du joueur dans PlayerPrefs
-                PlayerPrefs.SetString(joueur + "_Pion", pion.name);
-                PlayerPrefs.SetString(joueur + "_Couleur", couleur.ToString());
-                PlayerPrefs.SetString("ListeJoueurs", JsonUtility.ToJson(listeJoueur));
-            }
-            else
-            {
-                Debug.LogWarning("Le joueur " + joueur + " n'a pas encore choisi de pion ou de couleur.");
-            }
         }
 
-        // Charger la prochaine scène
-        SceneManager.LoadScene("MonopolyScene");
     }
-
-
     public string changementJoueur()
     {
         joueurActuel = listeJoueur[indexJoueur];
@@ -199,6 +163,20 @@ public class OptionMenu : MonoBehaviour
             indexJoueur++;
         }
         return joueurActuel;        
+    }
+    public void changementScene()
+    {
+        GameObject controleurMenu = GameObject.Find("ControleurMenu");
+
+        if (controleurMenu.activeSelf)
+        {
+            Debug.Log("Le GameObject 'ControleurMenu' est actif.");
+        }
+        else
+        {
+            Debug.Log("Le GameObject 'ControleurMenu' est désactivé.");
+        }
+        SceneManager.LoadScene("MonopolyScene");
     }
     // Update is called once per frame
     void Update()

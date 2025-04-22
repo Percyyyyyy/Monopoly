@@ -16,15 +16,26 @@ public class Controlleur : MonoBehaviour
 
     GameObject controleurMenu;
     OptionMenu scriptMenu;
+    public GameObject panelMenu;
+
     void Start()
     {
-       
+        Animator animator = panelMenu.GetComponent<Animator>();
+        animator.SetBool("show", false);
+
         controleurMenu = GameObject.Find("ControleurMenu");
         scriptMenu = controleurMenu.GetComponent<OptionMenu>();
         Dictionary<string, Color> joueurCouleur = scriptMenu.joueurCouleur;
+        List<string> listeJoueur = scriptMenu.listeJoueur;
+
         foreach (var kvp in joueurCouleur)
         {
             Debug.Log("Clé : " + kvp.Key + ", Valeur : " + kvp.Value);
+        }
+
+        foreach (var joueur in listeJoueur)
+        {
+            Debug.Log("Joueur : " + joueur);
         }
     }
 

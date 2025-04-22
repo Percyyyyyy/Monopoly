@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{07E8CF80-CE5D-E7CA-3198-AF0A9873987E}</ProjectGuid>
+    <ProjectGuid>{77D2690F-1056-CE4C-C876-4E546053D78F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\face_script.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Scripts\Scoreboard.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\Camera_script.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\Scripts\CarteAchat.cs" />
     <Compile Include="Assets\Scripts\Controlleur.cs" />
     <Compile Include="Assets\Scripts\cube_script.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\Scripts\Wait.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
@@ -92,6 +95,7 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Scripts\ScriptSlide.cs" />
     <Compile Include="Assets\Scripts\ChoisirObjet.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -1079,15 +1083,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
-      <Project>{022DAC58-24A4-8BAD-22C1-BAC760DC16D7}</Project>
+      <Project>{57C65088-1006-15B3-288B-47C934D29B16}</Project>
       <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
     <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
-      <Project>{A3FD4CD7-9CC8-05C4-890F-FE35D352FBA2}</Project>
+      <Project>{97325D5C-76CC-CD37-1443-4C0DD05E67E2}</Project>
       <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
-      <Project>{4A9C4A27-FFD7-136F-7428-2471DCB3A193}</Project>
+      <Project>{01EC01BD-3584-0F82-A273-2E0BF341A5C2}</Project>
       <Name>Boxophobic.Utils.Editor</Name>
     </ProjectReference>
   </ItemGroup>
